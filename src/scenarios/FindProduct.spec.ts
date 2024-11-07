@@ -10,6 +10,10 @@ test.describe.only('Find Products', () => {
     .andPath('application.base_url')
     .retrieveData();
 
+  test.use({ 
+    userAgent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36" 
+  });
+
   test.beforeEach(async ({ page }) => {
     homePage = new HomePage(page);
     await page.goto(BASE_URL);

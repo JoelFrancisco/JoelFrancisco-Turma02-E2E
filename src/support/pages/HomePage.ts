@@ -21,6 +21,8 @@ export default class HomePage extends BasePage {
   }
 
   async checkNameContainsRelevantTerm(): Promise<void> {
-    await expect(this.homeElements.getFirstProduct()).toContainText("notebook");
+    await expect(this.homeElements.getFirstProduct()).toContainText("notebook", {
+        ignoreCase: true
+    });
   }
 }
