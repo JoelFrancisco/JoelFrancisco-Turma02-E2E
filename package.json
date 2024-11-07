@@ -30,7 +30,7 @@
     "format": "prettier --write \"**/**.[jt]s?(x)\"",
     "verify": "prettier --check \"**/**.[jt]s?(x)\"",
     "lint": "npx eslint \"**/**.[jt]s?(x)\"",
-    "scenario": "SET QA=1 && npx playwright test src/scenarios/CadastroDelivery.spec.ts --output artifacts/media --workers 1",
+    "scenario": "npx playwright test src/scenarios/FindProduct.spec.ts --output artifacts/media --workers 1",
     "test": "SET QA=1 && npx playwright test --output artifacts/media --workers 1",
     "show-report": "npx playwright show-report artifacts/report",
     "actions": "npx playwright test --output artifacts/media --workers 1",    
