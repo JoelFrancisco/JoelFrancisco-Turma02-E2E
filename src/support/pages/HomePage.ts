@@ -12,17 +12,15 @@ export default class HomePage extends BasePage {
   }
 
   async searchProductByName(): Promise<void> {
-    await this.homeElements.getSearchField().fill('t-shirts');
+    await this.homeElements.getSearchField().fill('notebook');
     await this.homeElements.getSearchButton().click();
   }
 
-  async checkProductCount(): Promise<void> {
-    await expect(this.homeElements.getProductCount()).toBeVisible();
+  async checkProductVisible(): Promise<void> {
+    await expect(this.homeElements.getFirstProduct()).toBeVisible();
   }
 
-  async login(): Promise<void> {
-    await this.homeElements.getLoginField().fill('standard_user');
-    await this.homeElements.getPassField().fill('secret_sauce');
-    await this.homeElements.getSubmitButton().click();
+  async checkNameContainsRelevantTerm(): Promise<void> {
+    await expect(this.homeElements.getFirstProduct()).toContainText("notebook");
   }
 }

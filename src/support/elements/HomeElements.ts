@@ -8,26 +8,14 @@ export default class HomeElements extends BaseElements {
   }
 
   getSearchField(): Locator {
-    return this.page.locator('#search_query_top');
+    return this.page.locator('input[type="search"]');
   }
 
   getSearchButton(): Locator {
-    return this.page.locator('button[name="submit_search"]');
+    return this.page.getByLabel('Buscar');
   }
 
-  getProductCount(): Locator {
-    return this.page.locator('span[class="heading-counter"]');
-  }
-
-  getLoginField(): Locator {
-    return this.page.locator('#user-name');
-  }
-
-  getPassField(): Locator {
-    return this.page.locator('#password');
-  }
-
-  getSubmitButton(): Locator {
-    return this.page.locator('#login-button');
+  getFirstProduct(): Locator {
+    return this.page.getByTestId('product-card::card').first();
   }
 }
