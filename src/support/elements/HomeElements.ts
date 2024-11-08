@@ -16,7 +16,7 @@ export default class HomeElements extends BaseElements {
   }
 
   getFirstProduct(): Locator {
-    return this.page.getByTestId('product-card::card').first();
+    return this.page.getByTestId('product-card::card').nth(0);
   }
 
   getCepButton(): Locator {
@@ -29,5 +29,9 @@ export default class HomeElements extends BaseElements {
 
   getCepSubmitButton(): Locator {
     return this.page.getByTestId('cta-cep-modal');
+  }
+
+  getHeader(): Locator {
+    return this.page.locator('#new-header');
   }
 }

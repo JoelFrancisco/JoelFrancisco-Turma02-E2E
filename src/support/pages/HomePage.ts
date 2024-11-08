@@ -36,7 +36,7 @@ export default class HomePage extends BasePage {
   }
 
   async checkIfCorrectLocation(): Promise<void> {
-    await expect(this.homeElements.getCepButton()).toContainText("içara", {
+    await expect(this.homeElements.getHeader()).toContainText("içara", {
         ignoreCase: true
     });
   }
