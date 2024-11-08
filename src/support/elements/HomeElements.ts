@@ -31,7 +31,7 @@ export default class HomeElements extends BaseElements {
     return this.page.getByTestId('cta-cep-modal');
   }
 
-  getHeader(): Locator {
-    return this.page.locator('#new-header');
+  getLocation(): Locator {
+    return this.page.getByTitle('Içara');
   }
 }
