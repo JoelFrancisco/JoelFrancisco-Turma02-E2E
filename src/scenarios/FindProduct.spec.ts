@@ -11,7 +11,8 @@ test.describe.only('Find Products', () => {
     .retrieveData();
 
   test.use({ 
-    userAgent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36" 
+    userAgent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36",
+    bypassCSP: true
   });
 
   test.beforeEach(async ({ page }) => {
