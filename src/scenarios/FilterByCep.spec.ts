@@ -3,7 +3,7 @@ import { join } from 'path';
 import { TheConfig } from 'sicolo';
 import HomePage from '../support/pages/HomePage';
 
-test.describe('Find Products', () => {
+test.describe('Filter by CEP', () => {
   const CONFIG = join(__dirname, '../support/fixtures/config.yml');
   let homePage: HomePage;
 
@@ -25,9 +25,9 @@ test.describe('Find Products', () => {
     await page.goto(BASE_URL);
   });
 
-  test('Find product by name', async () => {
-    await homePage.searchProductByName();
-    await homePage.checkProductVisible();
-    await homePage.checkNameContainsRelevantTerm();
+  test('Filter by CEP', async () => {
+    await homePage.clickFilterByCepButton();
+    await homePage.filterCepField();
+    await homePage.checkIfCorrectLocation();
   });
 });
