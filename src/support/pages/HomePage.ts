@@ -25,19 +25,4 @@ export default class HomePage extends BasePage {
         ignoreCase: true
     });
   }
-
-  async clickFilterByCepButton(): Promise<void> {
-    await this.homeElements.getCepButton().click();
-  }
-
-  async filterCepField(): Promise<void> {
-    await this.homeElements.getCepInput().fill("88820000");
-    await this.homeElements.getCepSubmitButton().click();
-  }
-
-  async checkIfCorrectLocation(): Promise<void> {
-    await expect(this.homeElements.getLocation()).toContainText("içara", {
-        ignoreCase: true
-    });
-  }
 }

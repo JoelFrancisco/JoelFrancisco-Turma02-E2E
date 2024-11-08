@@ -18,20 +18,4 @@ export default class HomeElements extends BaseElements {
   getFirstProduct(): Locator {
     return this.page.getByTestId('product-card::card').nth(0);
   }
-
-  getCepButton(): Locator {
-    return this.page.locator('button:has(path#icon)').first();
-  }
-
-  getCepInput(): Locator {
-    return this.page.locator('input#zipcode');
-  }
-
-  getCepSubmitButton(): Locator {
-    return this.page.getByTestId('cta-cep-modal');
-  }
-
-  getLocation(): Locator {
-    return this.page.getByTitle('Içara');
-  }
 }
